@@ -11,6 +11,7 @@
 - [Development mode](#development-mode)
 - [Build](#build)
 - [User stories and features](#user-stories-and-features)
+- [Serverless Functions](#serverless-functions)
 - [References](#references)
 
 ### Introduction
@@ -136,5 +137,12 @@ _As a user, I would like to be able to see a chart showing the upcoming events i
   - **Given** the main page has been opened,
   - **when** users selects chart view,
   - **then** a chart with the number of upcoming events for every city is displayed.
+
+### Serverless Functions
+
+In this project, serverless functions play a pivotal role in handling authorization for accessing public calendar events from the Google Calendar API.
+Only authorized users can have access to view event data from the Google Calendar API, which is rendered in the React Meet App. This authorization is facilitated by serverless functions, which are a more efficient alternative to building and maintaining a full server for this purpose. In this context, serverless functions will generate and provide access tokens, ensuring secure access to the Google Calendar API. AWS Lambda is the chosen cloud-service provider for implementing these serverless functions, making the app's architecture more scalable and cost-effective.
+
+![architectural-diagram](./img/AWS.png)
 
 ### References
