@@ -22,3 +22,25 @@ const oAuth2Client = new google.auth.OAuth2(
   CLIENT_SECRET,
   redirect_uris[0]
 );
+
+//Create getAuthURL function
+//Use Node.js module.exports to create and export the function’s logic
+module.exports.getAuthURL = async () => {
+  //Scopes array is passed to the `scope` option.
+  const authUrl = oAuth2Client.generateAuthUrl({
+    access_type: "offline",
+    scope: SCOPES,
+  });
+
+  //Return the statusCode, headers, and body
+  return {
+    statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": true,
+    },
+    body: JSON.stringify({
+      authUrl,
+    }),
+  };
+};
