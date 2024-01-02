@@ -3,6 +3,16 @@
 service: auth-server
 frameworkVersion: "3"
 
+# Provider section
+
+#  Provider declaration:
+# - name of the provider
+# - runtime supported by provider
+# - region, where the functions are hosted
+# - <other_option>: <value> , e.g.: timeout- optional, in seconds, default is 6
+
 provider:
   name: aws
   runtime: nodejs18.x
+  region: eu-central-1
+  timeout: 30
