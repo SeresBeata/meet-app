@@ -4,3 +4,6 @@ jspm_packages
 
 # Serverless directories
 .serverless
+
+# config file - to store info to access the Google Calendar API
+config.json
