@@ -44,3 +44,12 @@ functions:
       - http:
           path: api/token/{code}
           method: get
+  # Function to request calendar events:
+  # - By attaching the access token to the request.
+  # - Google then returns the requested data if it determines that the request and the token are valid.
+  getCalendarEvents:
+    handler: handler.getCalendarEvents
+    events:
+      - http:
+          path: api/get-events/{access_token}
+          method: get
