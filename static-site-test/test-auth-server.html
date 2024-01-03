@@ -6,5 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test Auth Server</title>
   </head>
-  <body></body>
+  <body>
+    <!-- Internal CSS Style: Start -->
+    <style>
+      #container {
+        max-width: 500px;
+      }
+      h4 {
+        margin-top: 25px;
+      }
+    </style>
+    <!-- End: Internal CSS Style-->
+    <!-- Main Section: Start -->
+    <main id="container">
+      <h1>OAuth2 Test</h1>
+      <h4><b>Step 1:</b> Get the Auth URL</h4>
+      <p>Click the button below to get your auth url.</p>
+      <button id="getAuthUrlButton">Get OAuth URL</button>
+      <p id="result"></p>
+      <a id="authURL" href target="_blank">Click to authorize</a>
+    </main>
+    <!-- End: Main Section -->
+
+    <!-- Script: Start -->
+    <script type="text/javascript">
+      const getAuthUrlButton = document.getElementById("getAuthUrlButton");
+      const resultElement = document.getElementById("result");
+      const resultLink = document.getElementById("authURL");
+      // Use getAuthURL endpoint
+      const getAuthURL =
+        "https://l679h29nq0.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url";
+
+      getAuthUrlButton.onclick = function () {
+        fetch(getAuthURL)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (json) {
+            const result = JSON.stringify(json);
+            // get the value of authUrl
+            const { authUrl } = JSON.parse(result);
+            // then add it to the html
+            resultElement.innerText = result;
+            resultLink.href = authUrl;
+          });
+      };
+    </script>
+    <!-- End: Script -->
+  </body>
 </html>
