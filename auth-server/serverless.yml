@@ -35,3 +35,12 @@ functions:
       - http:
           path: api/get-auth-url
           method: get
+  # Function to get the access token:
+  # - The authorization code received from ‘getAuthURL’ is passed to getAccessToken.
+  # - Google provides the app with a temporary access token.
+  getAccessToken:
+    handler: handler.getAccessToken
+    events:
+      - http:
+          path: api/token/{code}
+          method: get
