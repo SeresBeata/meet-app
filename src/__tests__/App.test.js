@@ -5,15 +5,18 @@ import App from "../App";
 
 //create a new group/“scope” called "<App /> component" via the describe() function
 describe("<App /> component", () => {
+  let AppDOM;
+  beforeEach(() => {
+    AppDOM = render(<App />).container.firstChild;
+  });
+
   //create test described as "renders list of events"
   test("renders list of events", () => {
-    const AppDOM = render(<App />).container.firstChild;
     expect(AppDOM.querySelector("#event-list")).toBeInTheDocument();
   });
 
   //create test described as "render CitySearch"
   test("render CitySearch", () => {
-    const AppDOM = render(<App />).container.firstChild;
     expect(AppDOM.querySelector("#city-search")).toBeInTheDocument();
   });
 });
