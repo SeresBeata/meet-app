@@ -2,3 +2,12 @@
 import { render } from "@testing-library/react";
 //import the component, which should be tested
 import EventList from "../components/EventList";
+
+//create a new group/“scope” called "<EventList /> component" via the describe() function
+describe("<EventList /> component", () => {
+  //create test described as "has an element with "list" role"
+  test("has an element with 'list' role", () => {
+    const EventListComponent = render(<EventList />);
+    expect(EventListComponent.queryByRole("list")).toBeInTheDocument();
+  });
+});
