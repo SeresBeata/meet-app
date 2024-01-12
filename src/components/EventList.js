@@ -1,6 +1,6 @@
 //create and export EventList child component
 const EventList = () => {
-  return <div id="event-list"></div>;
+  return <ul id="event-list"></ul>;
 };
 
 export default EventList;
