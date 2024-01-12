@@ -10,4 +10,10 @@ describe("<EventList /> component", () => {
     const EventListComponent = render(<EventList />);
     expect(EventListComponent.queryByRole("list")).toBeInTheDocument();
   });
+
+  //create test described as "renders correct number of events"
+  test("renders correct number of events", () => {
+    const EventListComponent = render(<EventList events={[{}, {}, {}, {}]} />);
+    expect(EventListComponent.getAllByRole("listitem")).toHaveLength(4);
+  });
 });
