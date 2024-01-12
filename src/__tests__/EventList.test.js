@@ -5,15 +5,19 @@ import EventList from "../components/EventList";
 
 //create a new group/“scope” called "<EventList /> component" via the describe() function
 describe("<EventList /> component", () => {
+  let EventListComponent;
+  beforeEach(() => {
+    EventListComponent = render(<EventList />);
+  });
+
   //create test described as "has an element with "list" role"
   test("has an element with 'list' role", () => {
-    const EventListComponent = render(<EventList />);
     expect(EventListComponent.queryByRole("list")).toBeInTheDocument();
   });
 
   //create test described as "renders correct number of events"
   test("renders correct number of events", () => {
-    const EventListComponent = render(
+    EventListComponent.rerender(
       <EventList events={[{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }]} />
     );
     expect(EventListComponent.getAllByRole("listitem")).toHaveLength(4);
