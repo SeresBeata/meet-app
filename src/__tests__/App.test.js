@@ -10,4 +10,10 @@ describe("<App /> component", () => {
     const AppDOM = render(<App />).container.firstChild;
     expect(AppDOM.querySelector("#event-list")).toBeInTheDocument();
   });
+
+  //create test described as "render CitySearch"
+  test("render CitySearch", () => {
+    const AppDOM = render(<App />).container.firstChild;
+    expect(AppDOM.querySelector("#city-search")).toBeInTheDocument();
+  });
 });
