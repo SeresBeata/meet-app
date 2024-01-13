@@ -7,9 +7,13 @@ import CitySearch from "../components/CitySearch";
 
 //create a new group/“scope” called "<CitySearch /> component" via the describe() function
 describe("<CitySearch /> component", () => {
+  let CitySearchComponent;
+  beforeEach(() => {
+    CitySearchComponent = render(<CitySearch />);
+  });
+
   //create test described as "renders text input"
   test("renders text input", () => {
-    const CitySearchComponent = render(<CitySearch />);
     const cityTextBox = CitySearchComponent.queryByRole("textbox");
     expect(cityTextBox).toBeInTheDocument();
     expect(cityTextBox).toHaveClass("city");
@@ -17,14 +21,12 @@ describe("<CitySearch /> component", () => {
 
   //create test described as "suggestions list is hidden by default"
   test("suggestions list is hidden by default", () => {
-    const CitySearchComponent = render(<CitySearch />);
     const suggestionList = CitySearchComponent.queryByRole("list");
     expect(suggestionList).not.toBeInTheDocument();
   });
 
   //create test described as "renders a list of suggestions when city textbox gains focus"
   test("renders a list of suggestions when city textbox gains focus", async () => {
-    const CitySearchComponent = render(<CitySearch />);
     const user = userEvent.setup();
     const cityTextBox = CitySearchComponent.queryByRole("textbox");
     await user.click(cityTextBox);
