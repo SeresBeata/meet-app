@@ -2,6 +2,8 @@
 import { render } from "@testing-library/react";
 //import the component, which should be tested
 import EventList from "../components/EventList";
+//import function from api.js
+import { getEvents } from "../api";
 
 //create a new group/“scope” called "<EventList /> component" via the describe() function
 describe("<EventList /> component", () => {
@@ -16,10 +18,11 @@ describe("<EventList /> component", () => {
   });
 
   //create test described as "renders correct number of events"
-  test("renders correct number of events", () => {
-    EventListComponent.rerender(
-      <EventList events={[{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }]} />
+  test("renders correct number of events", async () => {
+    const allEvents = await getEvents();
+    EventListComponent.rerender(<EventList events={allEvents} />);
+    expect(EventListComponent.getAllByRole("listitem")).toHaveLength(
+      allEvents.length
     );
-    expect(EventListComponent.getAllByRole("listitem")).toHaveLength(4);
   });
 });
