@@ -26,6 +26,16 @@ const CitySearch = ({ allLocations }) => {
     setSuggestions(filteredLocations);
   };
 
+  //create "handleItemClicked" function to use in the "onClick" event handler of the "suggestion" list item (<li>)
+  const handleItemClicked = (event) => {
+    //obtain the textContent of the clicked <li>
+    const value = event.target.textContent;
+    //set the "query" state to the textContent of the clicked <li>
+    setQuery(value);
+    // hide the list
+    setShowSuggestions(false);
+  };
+
   return (
     <div id="city-search">
       <input
@@ -49,7 +59,11 @@ const CitySearch = ({ allLocations }) => {
         <ul className="suggestions">
           {/*return items from the list of "suggestions" and use "suggestion" as a key to distinguish each item.  */}
           {suggestions.map((suggestion) => {
-            return <li key={suggestion}>{suggestion}</li>;
+            return (
+              <li onClick={handleItemClicked} key={suggestion}>
+                {suggestion}
+              </li>
+            );
           })}
           {/* Add "See all cities" list item at the end, after returning list items of suggestions. */}
           <li key="See all cities">
