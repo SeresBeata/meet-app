@@ -4,6 +4,8 @@ import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 //import the component, which should be tested
 import CitySearch from "../components/CitySearch";
+//import functions from api.js
+import { extractLocations, getEvents } from "../api";
 
 //create a new group/“scope” called "<CitySearch /> component" via the describe() function
 describe("<CitySearch /> component", () => {
