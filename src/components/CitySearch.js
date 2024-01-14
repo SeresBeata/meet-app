@@ -51,6 +51,7 @@ const CitySearch = ({ allLocations }) => {
           {suggestions.map((suggestion) => {
             return <li key={suggestion}>{suggestion}</li>;
           })}
+          {/* Add "See all cities" list item at the end, after returning list items of suggestions. */}
           <li key="See all cities">
             <b>See all cities</b>
           </li>
