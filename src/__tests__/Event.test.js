@@ -5,6 +5,6 @@ import userEvent from "@testing-library/user-event";
 //import the component, which should be tested
 import Event from "../components/Event";
 //import mock data
-import mockData from "./mock-data";
+import mockData from "../mock-data";
 //import function from api.js
 import { getEvents } from "../api";
