@@ -8,3 +8,30 @@ import Event from "../components/Event";
 import mockData from "../mock-data";
 //import function from api.js
 import { getEvents } from "../api";
+
+//create "event" const
+const event = mockData;
+
+//create a new group/“scope” called "<Event /> component" via the describe() function
+describe("<Event /> component", () => {
+  //declare variables
+  let EventComponent;
+  let allEvents;
+
+  //use beforeAll()
+  beforeAll(async () => {
+    allEvents = await getEvents();
+  });
+
+  //use beforeEach()
+  beforeEach(async () => {
+    EventComponent = render(<Event event={event[0]} />);
+  });
+
+  //create test described as "renders event title by using 'summary' key"
+  test("renders event title by using 'summary' key", () => {
+    expect(
+      EventComponent.queryByText(allEvents[0].summary)
+    ).toBeInTheDocument();
+  });
+});
