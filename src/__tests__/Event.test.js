@@ -34,4 +34,11 @@ describe("<Event /> component", () => {
       EventComponent.queryByText(allEvents[0].summary)
     ).toBeInTheDocument();
   });
+
+  //create test describd as "renders event time by using 'created' key"
+  test("renders event time by using 'created' key", () => {
+    expect(
+      EventComponent.queryByText(allEvents[0].created)
+    ).toBeInTheDocument();
+  });
 });
