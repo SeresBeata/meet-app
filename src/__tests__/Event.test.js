@@ -48,4 +48,9 @@ describe("<Event /> component", () => {
       EventComponent.queryByText(allEvents[0].location)
     ).toBeInTheDocument();
   });
+
+  //create test described as "renders event details button with the title 'show details'"
+  test("renders event details button with the title 'show details'", () => {
+    expect(EventComponent.queryByText("show details")).toBeInTheDocument();
+  });
 });
