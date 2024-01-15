@@ -11,6 +11,11 @@ const Event = ({ event }) => {
       <div>
         <button>show details</button>
       </div>
+      <div id="details">
+        <div>{event.start.dateTime}</div>
+        <div>{event.start.timeZone}</div>
+        <div>{event.description}</div>
+      </div>
     </li>
   );
 };
