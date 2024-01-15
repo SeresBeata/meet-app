@@ -7,6 +7,7 @@ const Event = ({ event }) => {
     <li>
       <div>{event.summary}</div>
       <div>{event.created}</div>
+      <div>{event.location}</div>
     </li>
   );
 };
