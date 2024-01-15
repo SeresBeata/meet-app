@@ -70,4 +70,14 @@ describe("<Event /> component", () => {
       EventComponent.container.querySelector("#details");
     expect(descriptionSection).toBeInTheDocument();
   });
+
+  //create test described as "hides the details section when the user clicks on the hide details button"
+  test("hides the details section when the user clicks on the hide details button", async () => {
+    const user = userEvent.setup();
+    const hideDetailsButton = EventComponent.queryByText("hide details");
+    await user.click(hideDetailsButton);
+    const descriptionSection =
+      EventComponent.container.querySelector("#details");
+    expect(descriptionSection).not.toBeInTheDocument();
+  });
 });
