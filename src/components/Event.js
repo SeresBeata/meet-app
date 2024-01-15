@@ -14,7 +14,28 @@ const Event = ({ event }) => {
       <div>{event.created}</div>
       <div>{event.location}</div>
       <div>
-        <button>show details</button>
+        {/* 
+      Use ternary operator: 
+      - If "showDetails" is true, render "hide details" btn. 
+      - If "showDetail" is false, render "show details" btn.
+      */}
+        {showDetails ? (
+          <button
+            onClick={() => {
+              setshowDetails(false);
+            }}
+          >
+            hide details
+          </button>
+        ) : (
+          <button
+            onClick={() => {
+              setshowDetails(true);
+            }}
+          >
+            show details
+          </button>
+        )}
       </div>
       {/* 
       Use ternary operator: 
