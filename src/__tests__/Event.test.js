@@ -41,4 +41,11 @@ describe("<Event /> component", () => {
       EventComponent.queryByText(allEvents[0].created)
     ).toBeInTheDocument();
   });
+
+  //create test described as "renders event location by using 'location' key"
+  test("renders event location by using 'location' key", () => {
+    expect(
+      EventComponent.queryByText(allEvents[0].location)
+    ).toBeInTheDocument();
+  });
 });
