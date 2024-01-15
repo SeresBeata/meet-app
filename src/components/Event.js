@@ -6,6 +6,7 @@ const Event = ({ event }) => {
   return (
     <li>
       <div>{event.summary}</div>
+      <div>{event.created}</div>
     </li>
   );
 };
