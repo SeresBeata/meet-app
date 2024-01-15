@@ -60,4 +60,14 @@ describe("<Event /> component", () => {
       EventComponent.container.querySelector("#details")
     ).not.toBeInTheDocument();
   });
+
+  //create test described as "shows the details section when the user clicks on the show details button"
+  test("shows the details section when the user clicks on the show details button", async () => {
+    const user = userEvent.setup();
+    const showDetailsButton = EventComponent.queryByText("show details");
+    await user.click(showDetailsButton);
+    const descriptionSection =
+      EventComponent.container.querySelector("#details");
+    expect(descriptionSection).toBeInTheDocument();
+  });
 });
