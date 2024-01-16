@@ -4,3 +4,19 @@ import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 //import the component, which should be tested
 import NumberOfEvents from "../components/NumberOfEvents";
+
+//create a new group/“scope” called "<NumberOfEvents /> component" via the describe() function
+describe("<NumberOfEvents/> component", () => {
+  let NumberOfEventsComponent;
+  //use beforeEach
+  beforeEach(() => {
+    NumberOfEventsComponent = render(<NumberOfEvents />);
+  });
+
+  //create test described as "renders textbox"
+  test("renders textbox", () => {
+    const NumberOfEventsTextBox =
+      NumberOfEventsComponent.queryByRole("textbox");
+    expect(NumberOfEventsTextBox).toBeInTheDocument();
+  });
+});
