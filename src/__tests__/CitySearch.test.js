@@ -1,12 +1,15 @@
 //import render() function from the @testing-library/react package to mock an accurate representation of the original React component
-import { render } from "@testing-library/react";
+import { render, within } from "@testing-library/react";
 //import the userEvent handler from @testling-library/user-event
 import userEvent from "@testing-library/user-event";
 //import the component, which should be tested
 import CitySearch from "../components/CitySearch";
 //import functions from api.js
 import { extractLocations, getEvents } from "../api";
+//import App parent component for integration testing
+import App from "../App";
 
+//UNIT TESTS
 //create a new group/“scope” called "<CitySearch /> component" via the describe() function
 describe("<CitySearch /> component", () => {
   let CitySearchComponent;
@@ -82,5 +85,27 @@ describe("<CitySearch /> component", () => {
     await user.click(BerlinGermanySuggestion);
 
     expect(cityTextBox).toHaveValue(BerlinGermanySuggestion.textContent);
+  });
+});
+
+//INTEGRATION TESTS
+//create a new group/“scope” called "<CitySearch /> integration" via the describe() function
+describe("<CitySearch /> integration", () => {
+  //create test described as "renders suggestions list when the app is rendered"
+  test("renders suggestions list when the app is rendered.", async () => {
+    const user = userEvent.setup();
+    const AppComponent = render(<App />);
+    const AppDOM = AppComponent.container.firstChild;
+
+    const CitySearchDOM = AppDOM.querySelector("#city-search");
+    const cityTextBox = within(CitySearchDOM).queryByRole("textbox");
+    await user.click(cityTextBox);
+
+    const allEvents = await getEvents();
+    const allLocations = extractLocations(allEvents);
+
+    const suggestionListItems =
+      within(CitySearchDOM).queryAllByRole("listitem");
+    expect(suggestionListItems.length).toBe(allLocations.length + 1);
   });
 });
