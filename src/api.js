@@ -10,7 +10,6 @@ export const extractLocations = (events) => {
   return locations;
 };
 
-//create "getEvents" function to return the mockData representing the list of all events.
 //create function to check token validity
 const checkToken = async (accessToken) => {
   const response = await fetch(
@@ -20,8 +19,29 @@ const checkToken = async (accessToken) => {
   return result;
 };
 
+//create "getEvents" function to return the list of events.
 export const getEvents = async () => {
-  return mockData;
+  //return mock data in case of localhost
+  if (window.location.href.startsWith("http://localhost")) {
+    return mockData;
+  }
+  //make a GET request to the Google Calendar API in case of access token
+  const token = await getAccessToken();
+
+  if (token) {
+    removeQuery();
+    const url =
+      "https://l679h29nq0.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" +
+      "/" +
+      token;
+    const response = await fetch(url);
+    const result = await response.json();
+    if (result) {
+      return result.events;
+    } else return null;
+  }
+};
+
 
 //create and export a new async function to get the access token
 export const getAccessToken = async () => {
