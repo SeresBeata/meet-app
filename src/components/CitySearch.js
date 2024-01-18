@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //create and export CitySearch child component
 const CitySearch = ({ allLocations }) => {
@@ -8,6 +8,11 @@ const CitySearch = ({ allLocations }) => {
   const [query, setQuery] = useState("");
   //creata state variable, called "suggestions" with initial state empty array
   const [suggestions, setSuggestions] = useState([]);
+
+  //use the stringified value of the allLocation prop as a dependency in useEffect
+  useEffect(() => {
+    setSuggestions(allLocations);
+  }, [`${allLocations}`]);
 
   //Create "handleInputChanged" function, to be used as the callback function of "onChange"
   const handleInputChanged = (event) => {
