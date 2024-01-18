@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 //create and export CitySearch child component
-const CitySearch = ({ allLocations }) => {
+const CitySearch = ({ allLocations, setCurrentCity }) => {
   //create state variable, called "showSuggestions" with initial state "false".
   const [showSuggestions, setShowSuggestions] = useState(false);
   //create state variable, called "query" with initial state empty string
@@ -39,6 +39,7 @@ const CitySearch = ({ allLocations }) => {
     setQuery(value);
     // hide the list
     setShowSuggestions(false);
+    setCurrentCity(value);
   };
 
   return (
