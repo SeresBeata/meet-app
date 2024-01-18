@@ -14,7 +14,7 @@ import App from "../App";
 describe("<CitySearch /> component", () => {
   let CitySearchComponent;
   beforeEach(() => {
-    CitySearchComponent = render(<CitySearch />);
+    CitySearchComponent = render(<CitySearch allLocations={[]} />);
   });
 
   //create test described as "renders text input"
