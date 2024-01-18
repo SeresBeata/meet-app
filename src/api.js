@@ -42,6 +42,22 @@ export const getEvents = async () => {
   }
 };
 
+//remove unnecessary query parameters from URL
+const removeQuery = () => {
+  let newurl;
+  if (window.history.pushState && window.location.pathname) {
+    newurl =
+      window.location.protocol +
+      "//" +
+      window.location.host +
+      window.location.pathname;
+    window.history.pushState("", "", newurl);
+  } else {
+    newurl = window.location.protocol + "//" + window.location.host;
+    window.history.pushState("", "", newurl);
+  }
+};
+
 
 //create and export a new async function to get the access token
 export const getAccessToken = async () => {
