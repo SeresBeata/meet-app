@@ -58,6 +58,19 @@ const removeQuery = () => {
   }
 };
 
+//redirect user to log in with Google, if the token doesn’t exist or is invalid, and need to get a new one.
+const getToken = async (code) => {
+  const encodeCode = encodeURIComponent(code);
+  const response = await fetch(
+    "https://l679h29nq0.execute-api.eu-central-1.amazonaws.com/dev/api/token" +
+      "/" +
+      encodeCode
+  );
+  const { access_token } = await response.json();
+  access_token && localStorage.setItem("access_token", access_token);
+
+  return access_token;
+};
 
 //create and export a new async function to get the access token
 export const getAccessToken = async () => {
