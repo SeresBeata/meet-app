@@ -9,10 +9,10 @@ const Event = ({ event }) => {
   const [showDetails, setshowDetails] = useState(false);
 
   return (
-    <li>
-      <div>{event.summary}</div>
-      <div>{new Date(event.start.dateTime).toUTCString()}</div>
-      <div>{event.location}</div>
+    <li className="event">
+      <h2>{event.summary}</h2>
+      <p>{new Date(event.start.dateTime).toUTCString()}</p>
+      <p>{event.location}</p>
       <div>
         {/* 
       Use ternary operator: 
@@ -21,6 +21,7 @@ const Event = ({ event }) => {
       */}
         {showDetails ? (
           <button
+            className="details-btn"
             onClick={() => {
               setshowDetails(false);
             }}
@@ -29,6 +30,7 @@ const Event = ({ event }) => {
           </button>
         ) : (
           <button
+            className="details-btn"
             onClick={() => {
               setshowDetails(true);
             }}
@@ -44,9 +46,8 @@ const Event = ({ event }) => {
       */}
       {showDetails ? (
         <div id="details">
-          <div>{event.start.dateTime}</div>
-          <div>{event.start.timeZone}</div>
-          <div>{event.description}</div>
+          <p>Time zone: {event.start.timeZone}</p>
+          <p>{event.description}</p>
         </div>
       ) : null}
     </li>
