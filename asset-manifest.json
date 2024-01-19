@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/achievement-5/static/css/main.f855e6bc.css",
-    "main.js": "/achievement-5/static/js/main.1598f5ac.js",
+    "main.js": "/achievement-5/static/js/main.5252682f.js",
     "static/js/787.fe274699.chunk.js": "/achievement-5/static/js/787.fe274699.chunk.js",
     "service-worker.js": "/achievement-5/service-worker.js",
     "index.html": "/achievement-5/index.html",
     "main.f855e6bc.css.map": "/achievement-5/static/css/main.f855e6bc.css.map",
-    "main.1598f5ac.js.map": "/achievement-5/static/js/main.1598f5ac.js.map",
+    "main.5252682f.js.map": "/achievement-5/static/js/main.5252682f.js.map",
     "787.fe274699.chunk.js.map": "/achievement-5/static/js/787.fe274699.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.1598f5ac.js"
+    "static/js/main.5252682f.js"
   ]
 }
