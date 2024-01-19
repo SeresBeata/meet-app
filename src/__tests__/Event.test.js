@@ -35,10 +35,12 @@ describe("<Event /> component", () => {
     ).toBeInTheDocument();
   });
 
-  //create test describd as "renders event time by using 'created' key"
-  test("renders event time by using 'created' key", () => {
+  //create test described as "renders event time by using 'start.dateTime' key"
+  test("renders event time by using 'start.dateTime' key", () => {
     expect(
-      EventComponent.queryByText(allEvents[0].created)
+      EventComponent.queryByText(
+        new Date(allEvents[0].start.dateTime).toUTCString()
+      )
     ).toBeInTheDocument();
   });
 
