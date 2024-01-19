@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 //create and export NumberOfEvents child component
-const NumberOfEvents = () => {
+const NumberOfEvents = ({ setCurrentNOE }) => {
   //create state variable, called "eventsNumber" with initial state 32.
   const [eventsNumber, setEventsNumber] = useState(32);
 
@@ -9,6 +9,7 @@ const NumberOfEvents = () => {
   const handleInputChanged = (event) => {
     const value = event.target.value;
     setEventsNumber(value);
+    setCurrentNOE(value);
   };
 
   return (
@@ -17,7 +18,7 @@ const NumberOfEvents = () => {
         type="text"
         value={eventsNumber}
         onChange={handleInputChanged}
-        placeholder="32"
+        placeholder="Enter a number"
       />
     </div>
   );

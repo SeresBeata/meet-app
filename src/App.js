@@ -19,7 +19,7 @@ const App = () => {
   //call fetchData in useEffect()
   useEffect(() => {
     fetchData();
-  }, [currentCity]);
+  }, [currentCity, currentNOE]);
 
   //create fetchData function to populate the "events" state with the events list, that will be fetched
   const fetchData = async () => {
@@ -35,7 +35,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <NumberOfEvents />
+      {/* pass function prop setCurrentNOE to NumberOfEvents: */}
+      <NumberOfEvents setCurrentNOE={setCurrentNOE} />
       {/* pass the allLocations state as a prop to CitySearch: */}
       {/* pass function prop setCurrentCity */}
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
