@@ -13,7 +13,9 @@ describe("<NumberOfEvents/> component", () => {
   let NumberOfEventsComponent;
   //use beforeEach
   beforeEach(() => {
-    NumberOfEventsComponent = render(<NumberOfEvents />);
+    NumberOfEventsComponent = render(
+      <NumberOfEvents setCurrentNOE={() => {}} />
+    );
   });
 
   //create test described as "renders textbox"
