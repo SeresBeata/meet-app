@@ -11,7 +11,7 @@ const Event = ({ event }) => {
   return (
     <li>
       <div>{event.summary}</div>
-      <div>{event.created}</div>
+      <div>{new Date(event.start.dateTime).toUTCString()}</div>
       <div>{event.location}</div>
       <div>
         {/* 
