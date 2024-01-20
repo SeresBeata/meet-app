@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import NumberOfEvents from "./components/NumberOfEvents";
 import CitySearch from "./components/CitySearch";
 import EventList from "./components/EventList";
+import Title from "./components/Title";
 //import functions from api.js
 import { extractLocations, getEvents } from "./api";
 import "./App.css";
@@ -35,8 +36,11 @@ const App = () => {
 
   return (
     <div className="App">
+      <Title />
       {/* pass function prop setCurrentNOE to NumberOfEvents: */}
+      <div style={{ color: "#999" }}>Set number of events</div>
       <NumberOfEvents setCurrentNOE={setCurrentNOE} />
+      <div style={{ color: "#999" }}>Search for a city</div>
       {/* pass the allLocations state as a prop to CitySearch: */}
       {/* pass function prop setCurrentCity */}
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
