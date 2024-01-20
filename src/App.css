@@ -82,9 +82,21 @@ input[type="number"] {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
+  /* background-color: #d9d9d9; */
+  background-color: #333333;
+  color: #d9d9d9;
   border-radius: 4px;
   position: relative;
+}
+
+.event h2 {
+  color: #00cc00;
+}
+
+#details > p:last-child {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .details-btn {
