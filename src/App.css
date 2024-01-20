@@ -89,12 +89,27 @@ input[type="number"] {
 
 .details-btn {
   position: absolute;
-  right: 5px;
-  bottom: 5px;
-  padding: 5px 8px;
+  right: 0px;
+  bottom: 0px;
+  /* padding: 5px 8px; */
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+
+  background-color: #00cc00;
+  color: #333333;
+  /* font-size: 20px; */
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 15px;
+}
+
+.details-btn:hover {
+  background-color: #fff;
+  color: #333333;
 }
 /********************** END: CSS TEMPLATE **********************/
 
