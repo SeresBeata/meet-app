@@ -233,4 +233,29 @@ input[type="number"] {
 }
 /* End: Title animation */
 /****** End: Title ******/
+
+/****** Custom Scrollbar: Start ******/
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #333333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00cc00;
+  border: 3px solid #333333;
+  border-radius: 5px;
+}
+
+/* Custom Scrollbar for Mozilla Firefox Webbrowser Start */
+@supports (scrollbar-color: #00cc00 #333333) {
+  * {
+    scrollbar-color: #00cc00 #333333;
+    scrollbar-width: thin;
+  }
+}
+/* End: Custom Scrollbar for Mozilla Firefox Webbrowser */
+/****** End: Custom Scrollbar ******/
 /********************** END: CUSTOM CSS **********************/
