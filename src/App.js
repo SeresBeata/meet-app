@@ -38,9 +38,13 @@ const App = () => {
     <div className="App">
       <Title />
       {/* pass function prop setCurrentNOE to NumberOfEvents: */}
-      <div style={{ color: "#999" }}>Set number of events</div>
+      <div style={{ color: "#999", margin: "50px 0 10px 0" }}>
+        Set number of events
+      </div>
       <NumberOfEvents setCurrentNOE={setCurrentNOE} />
-      <div style={{ color: "#999" }}>Search for a city</div>
+      <div style={{ color: "#999", marginBottom: "10px" }}>
+        Search for a city
+      </div>
       {/* pass the allLocations state as a prop to CitySearch: */}
       {/* pass function prop setCurrentCity */}
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
