@@ -14,5 +14,5 @@ Feature: Filter events by city
         Given the user has typed a city in the city textbox (e.g. “Berlin”) 
         And the list of suggested cities is showing
         When user selects a city from the list (e.g. “Berlin, Germany”)
-        And the content in the city textbox is changed to the selected city (i.e. “Berlin, Germany”)
-        Then a list of all available events for the selected city (e.g. “Berlin, Germany”) is shown
+        Then the content in the city textbox is changed to the selected city (i.e. “Berlin, Germany”)
+        And a list of all available events for the selected city (e.g. “Berlin, Germany”) is shown
