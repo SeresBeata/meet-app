@@ -19,3 +19,6 @@ console.error = (...args) => {
   );
   if (!ignoreMessage) originalError(...args);
 };
+
+// increase the timeout time for end-to-end tests, in which the headless mode is turned off
+jest.setTimeout(30000);
