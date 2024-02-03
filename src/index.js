@@ -27,4 +27,4 @@ serviceWorkerRegistration.unregister();
 reportWebVitals();
 
 //Use notify() to check if Atatus was successfully integrated
-atatus.notify(new Error("Test Atatus Setup"));
+// atatus.notify(new Error("Test Atatus Setup"));
