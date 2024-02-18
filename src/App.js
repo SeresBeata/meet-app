@@ -5,6 +5,8 @@ import EventList from "./components/EventList";
 import Title from "./components/Title";
 //import functions from api.js
 import { extractLocations, getEvents } from "./api";
+//import class component
+import { InfoAlert } from "./components/Alert";
 import "./App.css";
 
 const App = () => {
@@ -16,6 +18,8 @@ const App = () => {
   const [allLocations, setAllLocations] = useState([]);
   //create state variable, called "currentCity" with initial state "See all cities".
   const [currentCity, setCurrentCity] = useState("See all cities");
+  //create state variable, called "infoAlert" witn initial state "".
+  const [infoAlert, setInfoAlert] = useState("");
 
   //call fetchData in useEffect()
   useEffect(() => {
@@ -37,6 +41,15 @@ const App = () => {
   return (
     <div className="App">
       <Title />
+      {/* Create div that will serve as a container for all user alerts */}
+      <div className="alerts-container">
+        {/* 
+        Use ternary operator: 
+        - if infoAlert's length isn’t zero, render InfoAlert
+        - if infoAlert's length is zero, render nothing.
+         */}
+        {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
+      </div>
       {/* pass function prop setCurrentNOE to NumberOfEvents: */}
       <div style={{ color: "#999", margin: "50px 0 10px 0" }}>
         Set number of events
@@ -47,7 +60,12 @@ const App = () => {
       </div>
       {/* pass the allLocations state as a prop to CitySearch: */}
       {/* pass function prop setCurrentCity */}
-      <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} />
+      {/* pass the setInfoAlert setter function to CitySearch*/}
+      <CitySearch
+        allLocations={allLocations}
+        setCurrentCity={setCurrentCity}
+        setInfoAlert={setInfoAlert}
+      />
       {/* pass the events state as a prop to EventList: */}
       <EventList events={events} />
     </div>
