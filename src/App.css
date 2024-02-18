@@ -258,4 +258,15 @@ input[type="number"] {
 }
 /* End: Custom Scrollbar for Mozilla Firefox Webbrowser */
 /****** End: Custom Scrollbar ******/
+
+/****** Alert Container: Start ******/
+.alerts-container {
+  position: fixed;
+  width: 250px;
+  z-index: 1000;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/****** End: Alert Container ******/
 /********************** END: CUSTOM CSS **********************/
