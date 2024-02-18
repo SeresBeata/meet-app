@@ -9,7 +9,7 @@ const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
   const handleInputChanged = (event) => {
     const value = event.target.value;
     setEventsNumber(value);
-    setCurrentNOE(value);
+    // setCurrentNOE(value);
 
     let errorText;
     //use isNaN() function
