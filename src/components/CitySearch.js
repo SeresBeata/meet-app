@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 //create and export CitySearch child component
-const CitySearch = ({ allLocations, setCurrentCity }) => {
+const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
   //create state variable, called "showSuggestions" with initial state "false".
   const [showSuggestions, setShowSuggestions] = useState(false);
   //create state variable, called "query" with initial state empty string
@@ -29,6 +29,16 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
     setQuery(value);
     //set the "suggestions" state to the filtered locations array
     setSuggestions(filteredLocations);
+
+    //call setInfoAlert
+    let infoText;
+    if (filteredLocations.length === 0) {
+      infoText =
+        "We can not find the city you are looking for. Please try another city";
+    } else {
+      infoText = "";
+    }
+    setInfoAlert(infoText);
   };
 
   //create "handleItemClicked" function to use in the "onClick" event handler of the "suggestion" list item (<li>)
@@ -40,6 +50,8 @@ const CitySearch = ({ allLocations, setCurrentCity }) => {
     // hide the list
     setShowSuggestions(false);
     setCurrentCity(value);
+    //call setInfoAlert with an empty string- so in case of click on the “See all cities” option no alert appears
+    setInfoAlert("");
   };
 
   return (
