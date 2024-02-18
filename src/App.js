@@ -5,8 +5,8 @@ import EventList from "./components/EventList";
 import Title from "./components/Title";
 //import functions from api.js
 import { extractLocations, getEvents } from "./api";
-//import class component
-import { InfoAlert } from "./components/Alert";
+//import class components
+import { InfoAlert, ErrorAlert } from "./components/Alert";
 import "./App.css";
 
 const App = () => {
@@ -20,6 +20,8 @@ const App = () => {
   const [currentCity, setCurrentCity] = useState("See all cities");
   //create state variable, called "infoAlert" witn initial state "".
   const [infoAlert, setInfoAlert] = useState("");
+  //create state variable, called "errorAlert" with initial state "".
+  const [errorAlert, setErrorAlert] = useState("");
 
   //call fetchData in useEffect()
   useEffect(() => {
@@ -49,12 +51,22 @@ const App = () => {
         - if infoAlert's length is zero, render nothing.
          */}
         {infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
+        {/* 
+        Use ternary operator: 
+        - if errorAlert's length isn’t zero, render ErrorAlert
+        - if errorAlert's length is zero, render nothing.
+         */}
+        {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
       </div>
       {/* pass function prop setCurrentNOE to NumberOfEvents: */}
       <div style={{ color: "#999", margin: "50px 0 10px 0" }}>
         Set number of events
       </div>
-      <NumberOfEvents setCurrentNOE={setCurrentNOE} />
+      <NumberOfEvents
+        setCurrentNOE={setCurrentNOE}
+        //pass the setErrorAlert setter function to NumberOfEvents
+        setErrorAlert={setErrorAlert}
+      />
       <div style={{ color: "#999", marginBottom: "10px" }}>
         Search for a city
       </div>
