@@ -24,7 +24,7 @@ The aim of this project was to build a serverless, progressive web application (
 
 ### Link to the App
 
-A link to the live, hosted version of the app: [https://seresbeata.github.io/achievement-5/](https://seresbeata.github.io/achievement-5/)
+A link to the live, hosted version of the app: [https://seresbeata.github.io/meet-app/](https://seresbeata.github.io/meet-app/)
 
 ### Technologies
 
@@ -32,7 +32,7 @@ A link to the live, hosted version of the app: [https://seresbeata.github.io/ach
 
 ### Development mode
 
-Use `npm run start` to run the app in development mode. Navigate to "http://localhost:3000/achievement-5". The application automatically reload in case of changes any of the source files.
+Use `npm run start` to run the app in development mode. Navigate to "http://localhost:3000/meet-app". The application automatically reload in case of changes any of the source files.
 
 ### Build
 
