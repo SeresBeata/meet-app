@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/achievement-5/static/css/main.21976b89.css",
-    "main.js": "/achievement-5/static/js/main.a2fac019.js",
-    "static/js/787.fe274699.chunk.js": "/achievement-5/static/js/787.fe274699.chunk.js",
-    "service-worker.js": "/achievement-5/service-worker.js",
-    "index.html": "/achievement-5/index.html",
-    "main.21976b89.css.map": "/achievement-5/static/css/main.21976b89.css.map",
-    "main.a2fac019.js.map": "/achievement-5/static/js/main.a2fac019.js.map",
-    "787.fe274699.chunk.js.map": "/achievement-5/static/js/787.fe274699.chunk.js.map"
+    "main.css": "/meet-app/static/css/main.21976b89.css",
+    "main.js": "/meet-app/static/js/main.877667dc.js",
+    "static/js/787.f479401e.chunk.js": "/meet-app/static/js/787.f479401e.chunk.js",
+    "service-worker.js": "/meet-app/service-worker.js",
+    "index.html": "/meet-app/index.html",
+    "main.21976b89.css.map": "/meet-app/static/css/main.21976b89.css.map",
+    "main.877667dc.js.map": "/meet-app/static/js/main.877667dc.js.map",
+    "787.f479401e.chunk.js.map": "/meet-app/static/js/787.f479401e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.21976b89.css",
-    "static/js/main.a2fac019.js"
+    "static/js/main.877667dc.js"
   ]
 }
