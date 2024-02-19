@@ -54,6 +54,11 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
     setInfoAlert("");
   };
 
+  //create function to refresh the page
+  function refreshPage() {
+    window.location.reload();
+  }
+
   return (
     <div id="city-search">
       <input
@@ -85,7 +90,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
           })}
           {/* Add "See all cities" list item at the end, after returning list items of suggestions. */}
           <li key="See all cities">
-            <b>See all cities</b>
+            <b onClick={refreshPage}>See all cities</b>
           </li>
         </ul>
       ) : null}
