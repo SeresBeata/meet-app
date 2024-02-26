@@ -14,7 +14,7 @@ const SCOPES = [
 const { CLIENT_SECRET, CLIENT_ID, CALENDAR_ID } = process.env;
 
 //redirect uri
-const redirect_uris = ["https://seresbeata.github.io/meet-app/"];
+const redirect_uris = ["https://seresbeata.github.io/achievement-5/"];
 
 //Create and call a new instance of the google.auth.OAuth2 method from the Google API. This instance accepts CLIENT_ID, CLIENT_SECRET, and the redirect URL as parameters.
 const oAuth2Client = new google.auth.OAuth2(
