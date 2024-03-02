@@ -6,7 +6,7 @@ import Title from "./components/Title";
 //import functions from api.js
 import { extractLocations, getEvents } from "./api";
 //import class components
-import { InfoAlert, ErrorAlert } from "./components/Alert";
+import { InfoAlert, ErrorAlert, WarningAlert } from "./components/Alert";
 import "./App.css";
 
 const App = () => {
@@ -22,9 +22,20 @@ const App = () => {
   const [infoAlert, setInfoAlert] = useState("");
   //create state variable, called "errorAlert" with initial state "".
   const [errorAlert, setErrorAlert] = useState("");
+  //create state variable, called "warningAlert" with initial state "".
+  const [warningAlert, setWarningAlert] = useState("");
 
   //call fetchData in useEffect()
   useEffect(() => {
+    if (navigator.onLine) {
+      // if user is offline, set the warning alert message to an empty string ""
+      setWarningAlert("");
+    } else {
+      // if user is online, set the warning alert message to a non-empty string
+      setWarningAlert(
+        "You are currently in offline mode, events may not be up-to-date."
+      );
+    }
     fetchData();
   }, [currentCity, currentNOE]);
 
@@ -57,6 +68,12 @@ const App = () => {
         - if errorAlert's length is zero, render nothing.
          */}
         {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}
+        {/* 
+        Use ternary operator: 
+        - if warningAlert's length isn’t zero, render WarningAlert
+        - if warningAlert's length is zero, render nothing.
+         */}
+        {warningAlert.length ? <WarningAlert text={warningAlert} /> : null}
       </div>
       {/* pass function prop setCurrentNOE to NumberOfEvents: */}
       <div style={{ color: "#999", margin: "50px 0 10px 0" }}>
