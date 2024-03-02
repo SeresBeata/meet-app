@@ -1,5 +1,7 @@
 //import mock data
 import mockData from "./mock-data";
+//import NProgress
+import NProgress from "nprogress";
 
 //create "extractLocations" function to extract event locations out of an array of events and remove duplicates.
 export const extractLocations = (events) => {
