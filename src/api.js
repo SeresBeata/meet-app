@@ -25,6 +25,15 @@ export const getEvents = async () => {
   if (window.location.href.startsWith("http://localhost")) {
     return mockData;
   }
+
+  // if the user is online, the app will request data from the Google Calendar API;
+  //if the user is offline, the app will load the event list data stored in localStorage:
+  if (!navigator.onLine) {
+    const events = localStorage.getItem("lastEvents");
+    NProgress.done();
+    return events ? JSON.parse(events) : [];
+  }
+
   //make a GET request to the Google Calendar API in case of access token
   const token = await getAccessToken();
 
@@ -37,6 +46,9 @@ export const getEvents = async () => {
     const response = await fetch(url);
     const result = await response.json();
     if (result) {
+      NProgress.done();
+      // save the fetched events data to localStorage:
+      localStorage.setItem("lastEvents", JSON.stringify(result.events));
       return result.events;
     } else return null;
   }
