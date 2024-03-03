@@ -23,6 +23,7 @@ const checkToken = async (accessToken) => {
 
 //create "getEvents" function to return the list of events.
 export const getEvents = async () => {
+  NProgress.start();
   //return mock data in case of localhost
   if (window.location.href.startsWith("http://localhost")) {
     return mockData;
