@@ -32,7 +32,7 @@ const CityEventsChart = ({ allLocations, events }) => {
         (event) => event.location === location
       ).length;
       //use split() for the name of the city, without the country
-      const city = location.split(", ")[0];
+      const city = location.split(/, | - /)[0];
       //return the city name of a location and the event counts of a location
       return { city, count };
     });
@@ -46,8 +46,8 @@ const CityEventsChart = ({ allLocations, events }) => {
         margin={{
           top: 20,
           right: 20,
-          bottom: 20,
-          left: 20,
+          bottom: 60,
+          left: -30,
         }}
         style={{ margin: "0 auto" }}
       >
