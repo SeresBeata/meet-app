@@ -3,6 +3,7 @@ import NumberOfEvents from "./components/NumberOfEvents";
 import CitySearch from "./components/CitySearch";
 import EventList from "./components/EventList";
 import Title from "./components/Title";
+import CityEventsChart from "./components/CityEventsChart";
 //import functions from api.js
 import { extractLocations, getEvents } from "./api";
 //import class components
@@ -95,6 +96,7 @@ const App = () => {
         setCurrentCity={setCurrentCity}
         setInfoAlert={setInfoAlert}
       />
+      <CityEventsChart />
       {/* pass the events state as a prop to EventList: */}
       <EventList events={events} />
     </div>
