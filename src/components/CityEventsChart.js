@@ -13,7 +13,7 @@ import {
 } from "recharts";
 
 //create and export CityEventsChart child component
-const CityEventsChart = () => {
+const CityEventsChart = ({ allLocations, events }) => {
   return <div style={{ color: "#999" }}>This is a chart.</div>;
 };
 
