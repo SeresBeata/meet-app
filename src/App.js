@@ -96,8 +96,10 @@ const App = () => {
         setCurrentCity={setCurrentCity}
         setInfoAlert={setInfoAlert}
       />
-      {/* pass "allLocations" and "events" as props for data visualization */}
-      <CityEventsChart allLocations={allLocations} events={events} />
+      <div className="charts-container">
+        {/* pass "allLocations" and "events" as props for data visualization */}
+        <CityEventsChart allLocations={allLocations} events={events} />
+      </div>
       {/* pass the events state as a prop to EventList: */}
       <EventList events={events} />
     </div>
