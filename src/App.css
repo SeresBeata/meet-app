@@ -269,4 +269,20 @@ input[type="number"] {
   transform: translate(-50%, -50%);
 }
 /****** End: Alert Container ******/
+/****** Chart: Start ******/
+.charts-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    grid-template-columns: 1fr;
+  }
+}
+/****** End: Chart ******/
 /********************** END: CUSTOM CSS **********************/
