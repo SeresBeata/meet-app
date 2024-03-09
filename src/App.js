@@ -98,7 +98,8 @@ const App = () => {
         setInfoAlert={setInfoAlert}
       />
       <div className="charts-container">
-        <EventGenresChart />
+        {/* pass "events" as props */}
+        <EventGenresChart events={events} />
         {/* pass "allLocations" and "events" as props for data visualization */}
         <CityEventsChart allLocations={allLocations} events={events} />
       </div>
