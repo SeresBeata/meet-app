@@ -51,15 +51,27 @@ const EventGenresChart = ({ events }) => {
     const x = cx + radius * Math.cos(-midAngle * RADIAN) * 1.07;
     const y = cy + radius * Math.sin(-midAngle * RADIAN) * 1.07;
     return percent ? (
-      <text
-        x={x}
-        y={y}
-        fill={colors[index % colors.length]}
-        textAnchor={x > cx ? "start" : "end"}
-        dominantBaseline="central"
-      >
-        {`${genres[index]} ${(percent * 100).toFixed(0)}%`}
-      </text>
+      <>
+        <text
+          x={x}
+          y={y}
+          fill={colors[index % colors.length]}
+          className="chart-label1"
+          textAnchor={x > cx ? "start" : "end"}
+          dominantBaseline="central"
+        >
+          {`${genres[index]} ${(percent * 100).toFixed(0)}%`}
+        </text>
+        <text
+          x={x}
+          y={y}
+          className="chart-label2"
+          textAnchor={x > cx ? "start" : "end"}
+          dominantBaseline="central"
+        >
+          {`${(percent * 100).toFixed(0)}%`}
+        </text>
+      </>
     ) : null;
   };
 
@@ -72,7 +84,7 @@ const EventGenresChart = ({ events }) => {
           fill="#8884d8"
           labelLine={false}
           label={renderCustomizedLabel}
-          outerRadius="80%"
+          outerRadius="70%"
         >
           {data.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
