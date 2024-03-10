@@ -6,8 +6,6 @@
 - [Screenshots to represent the project](#screenshots-to-represent-the-project)
 - [Tasks in the project](#tasks-in-the-project)
 - [Link to the App](#link-to-the-app)
-- [Technologies](#technologies)
-- [Dependencies](#dependencies)
 - [Development mode](#development-mode)
 - [Build](#build)
 - [User stories and features](#user-stories-and-features)
@@ -20,15 +18,23 @@ The aim of this project was to build a serverless, progressive web application (
 
 ### Screenshots to represent the project
 
+![schreenshot-of-project](./img/meet-app-screeshot.png)
+
 ### Tasks in the project
+
+- Create Test Scenarios: Write user stories based on the app’s key features and translate user stories for each feature into multiple test scenarios.
+- Use OAuth: Prepare an OAuth client for authorization and authentication
+- Use Google Calendar API: Connect a React app with a protected API
+- Write & Test AWS Lambda Functions: Write Lambda functions to implement serverless technology in the app. Test Lambda functions and create a serverless deployment package
+- Test:
+  - Unit Testing and Integration Testing: Jest
+  - Acceptance Testing: Cucumber
+  - End-to-End Testing: Puppeteer
+- Data Visualization: Recharts
 
 ### Link to the App
 
 A link to the live, hosted version of the app: [https://seresbeata.github.io/achievement-5/](https://seresbeata.github.io/achievement-5/)
-
-### Technologies
-
-### Dependencies
 
 ### Development mode
 
@@ -88,17 +94,17 @@ _As a user, I would like to be able to specify the number of events I want to vi
 
   - **Given** the main page has been opened,
   - **when** the users hasn’t specified the number of events,
-  - **then** a default list of 10 events are displayed on the page.
+  - **then** a default list of 32 events are displayed on the page.
 
 - **Scenario 2:** When a user wants to change the events shown to a higher number of events.
 
-  - **Given** the default of 10 events has been displayed to the user,
+  - **Given** the default of 32 events has been displayed to the user,
   - **when** the user specifies a higher number of events than the default,
   - **then** the list is updated and new events are displayed to the user.
 
 - **Scenario 3:** When a user wants to change the events to show less than the default number of events.
 
-  - **Given** the default of 10 events has been displayed to the user,
+  - **Given** the default of 32 events has been displayed to the user,
   - **when** the user specifies a lower number of events than the default,
   - **then** the list is updated and fewer events are displayed to the user.
 
@@ -146,3 +152,33 @@ Only authorized users can have access to view event data from the Google Calenda
 ![architectural-diagram](./img/AWS.png)
 
 ### References
+
+1.  Reference  
+    Description: AWS (Amazon Web Services) is an online platform that provides scalable and cost-effective cloud computing solutions.  
+    Product: AWS  
+    Date: 10/03/2024  
+    [https://aws.amazon.com/](https://aws.amazon.com/)
+
+2.  Reference  
+    Description: Jest is a JavaScript Testing Framework with a focus on simplicity. It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and more.  
+    Product: Jest  
+    Date: 10/03/2024  
+    [https://jestjs.io/](https://jestjs.io/)
+
+3.  Reference  
+    Description: Cucumber is an open-source software testing tool. Cucumber testing deals with an application's behavior. It tests applications as a behavior-driven development (BDD) style.  
+    Product: Cucumber  
+    Date: 10/03/2024  
+    [https://cucumber.io/](https://cucumber.io/)
+
+4.  Reference  
+    Description: Puppeteer is a Node.js library which provides a high-level API to control Chrome/Chromium over the DevTools Protocol. Puppeteer runs in headless mode by default, but can be configured to run in full ("headful") Chrome/Chromium.  
+    Product: Puppeteer  
+    Date: 10/03/2024  
+    [https://pptr.dev/](https://pptr.dev/)
+
+5.  Reference  
+    Description: Recharts is a composable charting library built on React components for data visualization.  
+    Product: Recharts  
+    Date: 10/03/2024  
+    [https://recharts.org/en-US/](https://recharts.org/en-US/)
